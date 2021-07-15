@@ -1,0 +1,272 @@
+.second {
+  position: relative;
+  height: 705px;
+
+  &__container {
+    display: flex;
+    height: 100%;
+    background-color: #ffc61a;
+  }
+
+  &__content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 141px;
+    margin-right: -8px;
+    margin-left: 17px;
+
+    @include md {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 80px;
+      margin-right: 0;
+      margin-left: 0;
+      width: 100%;
+    }
+  }
+
+  &-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 14px;
+    margin-right: -1px;
+    width: 422px;
+    height: 472px;
+    min-width: 300px;
+    background-color: #fff;
+
+    &__button {
+      margin-top: 41px !important;
+      margin-left: 20px !important;
+      padding-top: 9px !important;
+      padding-bottom: 5px !important;
+      padding-left: 148px !important;
+      padding-right: 160px !important;
+
+      &:focus {
+        outline: none;
+        color: #ffc61a;
+        transition: color 0.2s ease-in-out;
+      }
+
+      @include md {
+        margin-top: 35px !important;
+        margin-bottom: 20px;
+        margin-left: 0 !important;
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+        width: 80% !important;
+      }
+
+      // @include sm {
+      //   &:hover {
+      //     pointer-events: none;
+      //   }
+      // }
+    }
+
+    &__title {
+      display: block;
+      padding: 18px 33px;
+      padding-bottom: 20px;
+      width: 100%;
+      font-family: "Lato-Black";
+      font-size: 34px;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+      color: #fff;
+      background-color: #000;
+
+      span {
+        color: #ffc61a;
+      }
+
+      @include md {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        font-size: 30px;
+        text-align: center;
+      }
+    }
+
+    &__inputs {
+      display: grid;
+      grid-gap: 23px;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 18px;
+      padding-right: 33px;
+      padding-left: 33px;
+
+      @include md {
+        padding-right: 0;
+        padding-left: 0;
+        width: 80%;
+      }
+
+      @include xs {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    &__field {
+      border-bottom: 3px solid #e4e4e4;
+      padding-bottom: 10px;
+      font-family: "Lato-Medium";
+      font-size: 32px;
+
+      input {
+        border: none;
+        padding: 0;
+        width: 100%;
+        font-weight: 500;
+        font-size: 20px;
+        color: #000;
+
+        &::placeholder {
+          color: #000;
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      &:last-child {
+        grid-column-end: span 2;
+      }
+
+      @include xs {
+        padding-bottom: 5px;
+        font-size: 22px;
+      }
+    }
+
+    @include md {
+      margin-top: 30px;
+      margin-bottom: 40px;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  @include md {
+    height: 100%;
+  }
+
+  @include xs {
+    height: 100%;
+  }
+}
+
+.content-left {
+  max-width: 47%;
+
+  &__subtitle {
+    margin-top: 2px;
+    font-family: "Lato-Black";
+    font-size: 35px;
+    letter-spacing: 0.1px;
+    text-transform: uppercase;
+
+    @include md {
+      text-align: center;
+    }
+
+    @include xs {
+      font-size: 25px;
+    }
+  }
+
+  &__title {
+    margin-top: 7px;
+    margin-left: -2px;
+    font-family: "Lato-Black";
+    font-size: 48px;
+    line-height: 60px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    @include xl {
+      font-size: 46px;
+      line-height: 55px;
+    }
+
+    @include md {
+      text-align: center;
+    }
+
+    @include sm {
+      font-size: 40px;
+    }
+
+    @include xs {
+      font-size: 35px;
+      line-height: 50px;
+    }
+  }
+
+  &__description {
+    margin-top: 27px;
+    font-family: "Lato-Regular";
+    font-size: 18px;
+    line-height: 22px;
+
+    @include xl {
+      margin-top: 20px;
+      font-size: 16px;
+    }
+
+    @include md {
+      text-align: center;
+    }
+
+    @include xs {
+      margin-top: 5px;
+      font-size: 15px;
+    }
+  }
+
+  &__button {
+    margin-top: 38px !important;
+
+    &:focus {
+      outline: none;
+      color: #ffc61a;
+      transition: color 0.2s ease-in-out;
+    }
+
+    @include xl {
+      margin-top: 14px !important;
+    }
+
+    @include md {
+      width: 50% !important;
+    }
+
+    // @include sm {
+    //   &:hover {
+    //     pointer-events: none;
+    //   }
+    // }
+
+    @include xs {
+      margin-top: 5px !important;
+      width: 100% !important;
+    }
+  }
+
+  @include lg {
+    max-width: 43%;
+  }
+
+  @include md {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+  }
+}

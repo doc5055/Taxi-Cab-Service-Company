@@ -1,0 +1,20 @@
+.btn-read {
+  margin-top: 63px;
+  border-radius: 7px;
+  padding-top: 9px;
+  padding-right: 31px;
+  padding-bottom: 5px;
+  padding-left: 31px;
+  font-family: "BebasNeue-Bold";
+  font-size: 30px;
+  letter-spacing: 0px;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #000;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+
+  &:hover {
+    color: #ffc61a;
+    transition: color 0.2s ease-in-out;
+  }
+}

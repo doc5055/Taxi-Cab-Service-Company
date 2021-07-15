@@ -1,0 +1,272 @@
+.tariffs {
+  height: 710px;
+  background-color: #fff;
+
+  &__title {
+    margin-top: 53px;
+    font-family: "Lato-Black";
+    font-size: 44px;
+    line-height: 38px;
+    text-align: center;
+    text-transform: uppercase;
+
+    span {
+      font-size: 35px;
+      color: #ffc61a;
+    }
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-right: -9px;
+    margin-left: 14px;
+    padding-top: 130px;
+    gap: 38px;
+
+    @include md {
+      margin-right: 0;
+      margin-left: 0;
+    }
+
+    @include min-sm {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+  }
+
+  &-card {
+    position: relative;
+
+    &__triangle {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      z-index: 5;
+      width: 75px;
+      height: 75px;
+      font-size: 0;
+      opacity: 0;
+      transition: opacity 0.1s ease-in-out;
+
+      i {
+        position: absolute;
+        left: 52%;
+        top: 47.5%;
+        font-family: "FontAwesome-Regular";
+        font-size: 30px;
+        color: #ffc61a;
+      }
+
+      @include md {
+        width: 65px;
+        height: 65px;
+      }
+    }
+
+    &__image {
+      position: absolute;
+      left: 5px;
+      top: -84px;
+      z-index: 5;
+
+      @include min-sm {
+        left: 50%;
+        top: -18%;
+        transform: translateX(-50%);
+      }
+    }
+
+    &__title {
+      z-index: 5;
+      margin-top: 120px;
+      font-family: "Lato-Black";
+      font-size: 29px;
+      line-height: 1;
+      letter-spacing: 1.1px;
+      text-align: center;
+      text-transform: uppercase;
+
+      @include min-xl {
+        margin-top: 60px;
+      }
+
+      @include md {
+        font-size: 27px;
+      }
+
+      @include min-sm {
+        margin-top: 70px;
+      }
+
+      @include xs {
+        margin-top: 60px;
+        font-size: 25px;
+      }
+    }
+
+    &__description {
+      z-index: 5;
+      margin-top: 25px;
+      max-width: 85%;
+      font-family: "Lato-Regular";
+      font-size: 18px;
+      line-height: 21px;
+      text-align: center;
+
+      @include md {
+        margin-top: 20px;
+        font-size: 16px;
+      }
+
+      @include min-sm {
+        margin-top: 15px;
+      }
+
+      @include xs {
+        font-size: 16px;
+      }
+    }
+
+    &__price {
+      z-index: 5;
+      margin-top: 11px;
+      font-family: "Lato-Black";
+      font-size: 44px;
+      text-transform: uppercase;
+
+      @include md {
+        margin-top: 5px;
+        font-size: 34px;
+      }
+
+      @include min-sm {
+        margin-top: 0;
+      }
+    }
+
+    &__button {
+      z-index: 5;
+      margin-top: 35px !important;
+      margin-left: 4px;
+      pointer-events: auto !important;
+
+      &:focus {
+        outline: none;
+        color: #ffc61a;
+        transition: color 0.2s ease-in-out;
+      }
+
+      @include xl {
+        margin-top: 25px !important;
+        margin-bottom: 35px !important;
+      }
+
+      @include md {
+        margin-top: 15px !important;
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+        width: 70% !important;
+      }
+
+      // @include sm {
+      //   &:hover {
+      //     pointer-events: none;
+      //   }
+      // }
+    }
+
+    &--bottom {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow: hidden;
+      height: 425px;
+      color: #000;
+      background-color: #f5f4f2;
+      cursor: pointer;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: -5;
+        background: #ffc61a;
+        opacity: 0;
+        transform: translateY(425px);
+        transition: transform 0.3s ease-in-out;
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+      &:active::before {
+        opacity: 1;
+      }
+
+      &:focus::before {
+        z-index: 0;
+        opacity: 0.8;
+        transform: translateY(0);
+        transition: transform 0.3s ease-in-out;
+      }
+
+      &:focus .tariffs-card__triangle {
+        opacity: 1;
+        transition: opacity 0.3s ease-in-out;
+      }
+
+      &:hover::before {
+        z-index: 0;
+        opacity: 0.8;
+        transform: translateY(0);
+        transition: transform 0.3s ease-in-out;
+      }
+
+      &:hover .tariffs-card__triangle {
+        opacity: 1;
+        transition: opacity 0.3s ease-in-out;
+      }
+
+      &--current {
+        pointer-events: none;
+
+        &::before {
+          z-index: 0;
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        &:focus::before {
+          opacity: 1;
+        }
+
+        .tariffs-card__triangle {
+          opacity: 1;
+          transition: opacity 0.3s ease-in-out;
+        }
+      }
+
+      @include min-sm {
+        height: 100%;
+      }
+    }
+
+    @include min-sm {
+      &:not(:last-child) {
+        margin-bottom: 15%;
+      }
+    }
+  }
+
+  @include min-sm {
+    height: 100%;
+  }
+}
